@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# This script does the following:
+#	Run by itself, set the wallpaper (at X start).
+#	If given a file, set that as the new wallpaper.
+#	If given a directory, choose random file in it.
+#	If wal is installed, also generates a colorscheme.
+
+# Location of link to wallpaper link.
+bgloc="${XDG_DATA_HOME:-$HOME/.local/share/}/bg"
+
+[ -f "$1" ] && ln -sf "$(readlink -f "$1")" "$bgloc" && wal -n -s -i  "$(readlink -f "$bgloc")" $2 $3 >/dev/null 2>&1 || wal -n -s -R
+ 
+pidof dwm >/dev/null && xdotool key alt+F5
+xwallpaper --zoom "$bgloc"
