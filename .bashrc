@@ -5,6 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+export BROWSER=brave;
 export VISUAL=nvim;
 export EDITOR=nvim;
 export PATH=$PATH:~/.local/bin

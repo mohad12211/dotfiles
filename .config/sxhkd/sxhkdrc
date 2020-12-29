@@ -1,2 +1,6 @@
 alt + s
 	spotify
+alt + w
+	$BROWSER
+alt + shift + F12
+	pgrep picom >/dev/null && pkill picom || picom
