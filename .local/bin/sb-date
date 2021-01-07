@@ -1,0 +1,4 @@
+#! /bin/bash 
+
+dte="  $(date +"%a, %B %d")"
+echo -e "$dte"

@@ -9,7 +9,7 @@
 # Location of link to wallpaper link.
 bgloc="${XDG_DATA_HOME:-$HOME/.local/share/}/bg"
 
-[ -f "$1" ] && ln -sf "$(readlink -f "$1")" "$bgloc" && wal -n -s -i  "$(readlink -f "$bgloc")" $2 $3 >/dev/null 2>&1 || wal -n -s -R
+[ -f "$1" ] && ln -sf "$(readlink -f "$1")" "$bgloc" && wal -n -i  "$(readlink -f "$bgloc")" $2 $3 >/dev/null 2>&1 || wal -n -R
  
 pidof dwm >/dev/null && xdotool key alt+F5
 xwallpaper --zoom "$bgloc"

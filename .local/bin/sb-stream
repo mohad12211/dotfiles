@@ -1,0 +1,9 @@
+#!/bin/bash
+if [ -f "/tmp/stream" ]; then
+	rm /tmp/stream
+else
+	touch /tmp/stream
+fi
+touch /tmp/mic
+pkill -RTMIN+10 dwmblocks
+

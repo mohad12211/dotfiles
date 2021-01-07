@@ -5,6 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+export _JAVA_AWT_WM_NONREPARENTING=1
 export BROWSER=brave;
 export VISUAL=nvim;
 export EDITOR=nvim;
@@ -17,13 +18,9 @@ alias ls='exa -al --color=always --group-directories-first'
 alias mc='sudo make clean install ; git clean -f .'
 alias mk='sudo make clean install'
 alias cl='git clean -f .'
-PS1='[\u@\h \W]\$ '
-
-
-if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
-	    GIT_PROMPT_ONLY_IN_REPO=1
-	        source $HOME/.bash-git-prompt/gitprompt.sh
-		GIT_PROMPT_THEME=Single_line_NoExitState_openSUSE
-fi
+alias pm='sudo pacman'
+source $HOME/.config/git-prompt.sh
+# PS1='\W $(git-prompt)> '
+PS1='\[\033[38;5;10m\]\W\[$(tput sgr0)\] $(git-prompt)\[$(tput sgr0)\]\[\033[38;5;14m\]>\[$(tput sgr0)\] \[$(tput sgr0)\]'
 
 alias config='/usr/bin/git --git-dir=/home/mohad/.cfg/ --work-tree=/home/mohad'

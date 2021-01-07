@@ -1,6 +1,41 @@
-alt + s
+alt + Pause
+	pkill -USR1 -x sxhkd
+
+super + s
 	spotify
-alt + w
+
+super + w
 	$BROWSER
-alt + shift + F12
+
+alt + F12
 	pgrep picom >/dev/null && pkill picom || picom
+
+super + f
+	st -e ranger
+
+super + d
+	discord
+
+alt + shift + Return
+	st
+
+alt + p
+	dmenu_run
+
+ctrl + alt + Up
+	dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+
+ctrl + alt + Right
+	dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+
+ctrl + alt + Left
+	dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+
+ctrl + alt + {equal, minus}
+	spotifyVol {+, -}
+
+button9
+	pkill -RTMIN+10 dwmblocks
+
+super + F9
+	sb-stream

@@ -1,0 +1,10 @@
+#!/bin/bash
+if [ -f "/tmp/stream" ]; then
+    if [ -f "/tmp/mic" ]; then
+	    echo "(Mic Open )"
+        rm /tmp/mic 
+    else
+        touch /tmp/mic
+	echo "(Mic Muted )"
+    fi
+fi    
